@@ -1,0 +1,536 @@
+{
+  "versao": "0.1",
+  "data": "2026-11-11",
+  "estado": "RASCUNHO - nao conferido pelo orientador; nao congelado",
+  "convencoes": {
+    "zona_limitrofe_pct": 0.1,
+    "zona_limitrofe_min_unidades_em_escala_inteira": 1,
+    "faixas_probabilidade": {
+      "alta": ">=70%",
+      "media": "40-69%",
+      "baixa": "<40%"
+    },
+    "teto_probabilidade_dado_ausente_ou_conflitante": "media",
+    "valor_exato_no_corte": "nao sorteado"
+  },
+  "testes": {
+    "berg": {
+      "nome_app": "Escala de Berg",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        56
+      ],
+      "plausivel": [
+        20,
+        56
+      ],
+      "corte": 45,
+      "sentido": "<",
+      "regra": "R-QED-01",
+      "instrumento_app": {
+        "nome": "Escala de Equilíbrio de Berg (Berg)",
+        "referencia_no_app": "Risco de queda se < 45 (corte da literatura: 45 a 51)",
+        "comparacao": "IGUAL: regras e app usam < 45"
+      }
+    },
+    "tug": {
+      "nome_app": "TUG",
+      "unidade": "segundos",
+      "casas": 1,
+      "passo": 0.1,
+      "escala": [
+        0,
+        120
+      ],
+      "plausivel": [
+        6.0,
+        40.0
+      ],
+      "corte": 13.5,
+      "sentido": ">=",
+      "regra": "R-QED-02",
+      "instrumento_app": {
+        "nome": "Timed Up and Go (TUG)",
+        "referencia_no_app": "Risco de queda se >= 13,5s (corte convencional)",
+        "comparacao": "IGUAL: regras e app usam >= 13,5 s"
+      }
+    },
+    "preensao": {
+      "nome_app": "Força de Preensão Manual (Dinamometria)",
+      "unidade": "kg",
+      "casas": 1,
+      "passo": 0.5,
+      "escala": [
+        0,
+        100
+      ],
+      "sentido": "<",
+      "regra": "R-SAR-01",
+      "por_sexo": {
+        "M": {
+          "corte": 28,
+          "plausivel": [
+            12.0,
+            45.0
+          ]
+        },
+        "F": {
+          "corte": 18,
+          "plausivel": [
+            6.0,
+            32.0
+          ]
+        }
+      },
+      "instrumento_app": {
+        "nome": "Força de Preensão Manual (Dinamometria)",
+        "referencia_no_app": "Forca reduzida (AWGS 2019) se < 28kg (homens) ou < 18kg (mulheres); o prompt pede o sexo e emite so o corte do paciente",
+        "comparacao": "IGUAL: regras e app usam o corte por sexo (AWGS 2019)"
+      }
+    },
+    "marcha": {
+      "nome_app": "Teste de Caminhada de 10 Metros (10MWT)",
+      "unidade": "m/s",
+      "casas": 2,
+      "passo": 0.01,
+      "escala": [
+        0,
+        3
+      ],
+      "plausivel": [
+        0.3,
+        1.6
+      ],
+      "corte": 1.0,
+      "sentido": "<",
+      "regra": "R-SAR-02",
+      "instrumento_app": {
+        "nome": "Teste de Caminhada de 10 Metros (10MWT)",
+        "referencia_no_app": "Velocidade reduzida (AWGS 2019) se < 1,0 m/s",
+        "comparacao": "IGUAL: regras e app usam < 1,0 m/s (AWGS 2019)"
+      }
+    },
+    "sppb": {
+      "nome_app": "SPPB",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        12
+      ],
+      "plausivel": [
+        2,
+        12
+      ],
+      "corte": 9,
+      "sentido": "<=",
+      "regra": "R-SAR-03",
+      "instrumento_app": {
+        "nome": "Short Physical Performance Battery (SPPB)",
+        "referencia_no_app": "<= 9 sugere baixo desempenho fisico (AWGS 2019)",
+        "comparacao": "IGUAL: regras e app usam <= 9"
+      }
+    },
+    "meem": {
+      "nome_app": "MEEM (Mini Exame do Estado Mental)",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        30
+      ],
+      "plausivel": [
+        10,
+        30
+      ],
+      "sentido": "<",
+      "regra": "R-COG-01",
+      "por_escolaridade": {
+        "analfabeto": 20,
+        "1_4": 25,
+        "5_8": 26.5,
+        "9_11": 28,
+        "mais_11": 29
+      },
+      "faixa_ambigua_sem_escolaridade": [
+        21,
+        23
+      ],
+      "instrumento_app": {
+        "nome": "Mini Exame do Estado Mental (MEEM)",
+        "referencia_no_app": "Corte por escolaridade (Brucki et al., 2003): < 20 analfabetos; < 25 (1–4 anos); < 26,5 (5–8 anos); < 28 (9–11 anos); < 29 (> 11 anos)",
+        "comparacao": "IGUAL: o prompt pergunta a escolaridade e emite so o corte da faixa (Brucki et al., 2003)"
+      }
+    },
+    "gds": {
+      "nome_app": "Escala de Depressão Geriátrica (GDS-15)",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        15
+      ],
+      "plausivel": [
+        0,
+        15
+      ],
+      "corte": 6,
+      "sentido": ">=",
+      "regra": "R-COG-02",
+      "instrumento_app": {
+        "nome": "Escala de Depressão Geriátrica (GDS-15)",
+        "referencia_no_app": ">= 6 sugere sintomas significativos",
+        "comparacao": "igual"
+      }
+    },
+    "efs": {
+      "nome_app": "Escala de Fragilidade de Edmonton (eFS)",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        17
+      ],
+      "plausivel": [
+        0,
+        15
+      ],
+      "corte": 7,
+      "sentido": ">=",
+      "regra": "R-FRA-01",
+      "classes": [
+        [
+          0,
+          4,
+          "sem_fragilidade"
+        ],
+        [
+          5,
+          6,
+          "vulneravel"
+        ],
+        [
+          7,
+          8,
+          "leve"
+        ],
+        [
+          9,
+          10,
+          "moderada"
+        ],
+        [
+          11,
+          17,
+          "grave"
+        ]
+      ],
+      "norm_intervalo": [
+        0,
+        4
+      ],
+      "instrumento_app": {
+        "nome": "Escala de Fragilidade de Edmonton (eFS)",
+        "referencia_no_app": ">= 7 sugere fragilidade (7-8 leve; 9-10 moderada; 11 ou mais grave)",
+        "comparacao": "IGUAL: regras e app usam >= 7 (faixa leve de Fabrício-Wehbe 2009)"
+      }
+    },
+    "katz": {
+      "nome_app": "Índice de Katz",
+      "unidade": "pontos",
+      "casas": 0,
+      "escala": [
+        0,
+        6
+      ],
+      "regra": "R-FRA-02",
+      "valores_sorteados": {
+        "norm": [
+          6
+        ],
+        "alt": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "alt_grave": [
+          2,
+          1,
+          0
+        ]
+      },
+      "classes": {
+        "6": "independente",
+        "4": "moderada",
+        "2": "grave",
+        "1": "grave",
+        "0": "grave"
+      },
+      "instrumento_app": {
+        "nome": "Índice de Katz (Katz)",
+        "referencia_no_app": "<= 4 sugere dependência funcional significativa",
+        "comparacao": "igual"
+      }
+    }
+  },
+  "escolaridade_texto": {
+    "analfabeto": "não alfabetizado(a)",
+    "1_4": "1 a 4 anos de estudo",
+    "5_8": "5 a 8 anos de estudo",
+    "9_11": "9 a 11 anos de estudo",
+    "mais_11": "mais de 11 anos de estudo"
+  },
+  "matriz": [
+    {
+      "codigo": "R-QED-01",
+      "regra": "Berg < 45 pontos = alterado (risco de queda)",
+      "valor": "< 45",
+      "fonte": "Instrumento original: Berg et al., 1992, Can J Public Health 83(Suppl 2):S7-11, PMID 1468055 (o resumo não traz ponto de corte). Cortes da literatura: revisão sistemática de Lima et al., 2018, Physiotherapy 104(4):383-394, doi 10.1016/j.physio.2018.02.002, PMID 29945726 (três estudos com cortes de 45 a 51; evidência insuficiente para usar a escala sozinha); Santos et al., 2011, Rev Bras Fisioter 15(2):95-101, doi 10.1590/s1413-35552011000200003, PMID 21789358 (melhor corte 49 em idosos inativos). A fonte citada na dissertação (Miyamoto et al., 2004) não foi conferida",
+      "tipo": "Corte da literatura (faixa publicada 45 a 51); escolha da autora: < 45, limite inferior da faixa",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026: 45 está dentro da faixa publicada, mas não é consenso; cortes de 48 e 49 também aparecem. Registrar a escolha como decisão da autora"
+    },
+    {
+      "codigo": "R-QED-02",
+      "regra": "TUG >= 13,5 s = alterado (risco de queda)",
+      "valor": ">= 13,5 s",
+      "fonte": "Shumway-Cook; Brauer; Woollacott, 2000, Phys Ther 80(9):896-903, PMID 10960937 (resumo: sensibilidade e especificidade de 87%, sem citar o valor no resumo). O valor 13,5 s aparece como corte de risco de queda em Beebe et al., 2013, J Geriatr Phys Ther 36(3):146-53, doi 10.1519/JPT.0b013e31826e73d5, PMID 22976812 (relato de caso, fonte secundária). Barry et al., 2014, BMC Geriatr 14:14, doi 10.1186/1471-2318-14-14, PMID 24484314 (texto completo lido): atribui o corte >= 13,5 s a Shumway-Cook 2000 (caso-controle, 15 caidores e 15 nao caidores); na metanalise de coortes, sensibilidade 0,32 e especificidade 0,73, e os autores desaconselham usar o TUG isolado para risco de queda",
+      "tipo": "Corte publicado",
+      "verificacao": "Origem do 13,5 s conferida em 11/11/2026 por fonte secundaria (Barry 2014, texto completo); texto completo de Shumway-Cook 2000 nao lido. Evidencia de desempenho preditivo fraca: descrever como corte convencional"
+    },
+    {
+      "codigo": "R-QED-03",
+      "regra": "RETIRADA em 11/11/2026: o Teste de Sentar-e-Levantar 5x não está entre os 49 instrumentos do app",
+      "valor": "> 15 s",
+      "fonte": "Buatois et al., 2010, Phys Ther 90(4):550-60, doi 10.2522/ptj.20090158, PMID 20203094: duração > 15 s no teste de sentar e levantar 5x dobrou o risco de quedas recorrentes em idosos comunitários de 65 anos ou mais com risco moderado. Ver também Buatois et al., 2008, J Am Geriatr Soc 56(8):1575-7, doi 10.1111/j.1532-5415.2008.01777.x, PMID 18808608 (carta; resumo indisponível)",
+      "tipo": "Retirada",
+      "verificacao": "Não se aplica (fonte conferida, Buatois 2010, mas o instrumento não está nos 49)"
+    },
+    {
+      "codigo": "R-SAR-01",
+      "regra": "Força de preensão baixa: < 28 kg (homens) e < 18 kg (mulheres)",
+      "valor": "< 28 kg / < 18 kg",
+      "fonte": "Chen et al., 2020 (AWGS 2019), J Am Med Dir Assoc 21(3):300-307, doi 10.1016/j.jamda.2019.12.012, PMID 32033882; resumo conferido no PubMed; tabela e página do texto completo a registrar",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026"
+    },
+    {
+      "codigo": "R-SAR-02",
+      "regra": "Baixo desempenho físico: velocidade de marcha < 1,0 m/s (instrumento do app: Teste de Caminhada de 10 Metros, 10MWT)",
+      "valor": "< 1,0 m/s",
+      "fonte": "Chen et al., 2020 (AWGS 2019), mesmo artigo; o instrumento do AWGS é a caminhada de 6 m, e o aplicativo usa a velocidade de marcha. Desde 12/11/2026 o app também usa < 1,0 m/s para o 10MWT",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026"
+    },
+    {
+      "codigo": "R-SAR-03",
+      "regra": "Baixo desempenho físico: SPPB <= 9",
+      "valor": "<= 9",
+      "fonte": "Chen et al., 2020 (AWGS 2019), mesmo artigo",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026"
+    },
+    {
+      "codigo": "R-SAR-04",
+      "regra": "RETIRADA em 11/11/2026: DXA não está entre os 49 instrumentos do app",
+      "valor": "< 7,0 / < 5,4",
+      "fonte": "Chen et al., 2020 (AWGS 2019), mesmo artigo",
+      "tipo": "Retirada",
+      "verificacao": "Não se aplica (cortes AWGS conferidos no resumo, mas o exame não está nos 49)"
+    },
+    {
+      "codigo": "R-SAR-05",
+      "regra": "Categorias possíveis no gerador: sem sarcopenia (nenhum critério) e sarcopenia possível (força baixa ou desempenho baixo). Sem DXA no app, 'sarcopenia' e 'sarcopenia grave' não são alcançáveis",
+      "valor": "definição",
+      "fonte": "Chen et al., 2020 (AWGS 2019): o resumo conferido traz 'sarcopenia possível' e a definição de sarcopenia; a definição de 'grave' (três critérios baixos) não está no resumo e deve ser conferida no texto completo",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026 para 'possível'; 'grave' não é mais usada"
+    },
+    {
+      "codigo": "R-COG-01",
+      "regra": "MEEM abaixo da mediana normativa da escolaridade (Brucki et al., 2003): 20 (analfabetos), 25 (1 a 4 anos), 26,5 (5 a 8), 28 (9 a 11), 29 (mais de 11). Decisão da autora em 11/11/2026: usar as medianas por escolaridade como referência",
+      "valor": "20 / 25 / 26,5 / 28 / 29",
+      "fonte": "Brucki et al., 2003, Arq Neuropsiquiatr 61(3B):777-81, doi 10.1590/s0004-282x2003000500014, PMID 14595482. O resumo descreve esses valores como MEDIANAS de 433 pessoas saudáveis por escolaridade, e não como pontos de corte",
+      "tipo": "Convenção da autora (medianas de Brucki usadas como corte)",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026: valores corretos (433 pessoas saudáveis). A fonte os apresenta como medianas, não como ponto de corte. Como são medianas de pessoas saudáveis, cerca de metade dos saudáveis fica abaixo delas por definição, então 'abaixo da mediana' deve ser descrito como desempenho abaixo da referência normativa, e não como diagnóstico de déficit cognitivo. Direção '<' é escolha da autora"
+    },
+    {
+      "codigo": "R-COG-02",
+      "regra": "GDS-15 >= 6 = rastreio positivo para sintomas depressivos",
+      "valor": ">= 6",
+      "fonte": "Paradela; Lourenço; Veras, 2005, Rev Saude Publica 39(6):918-23, doi 10.1590/s0034-89102005000600008, PMID 16341401 (302 idosos ambulatoriais: melhor equilíbrio no corte 5/6, sensibilidade 81% e especificidade 71%). Almeida e Almeida, 1999, Int J Geriatr Psychiatry 14(10):858-65, doi 10.1002/(sici)1099-1166(199910)14:10<858::aid-gps35>3.0.co;2-8, PMID 10521885 (64 pacientes: 4/5 com sensibilidade 92,7% e especificidade 65,2%; 6/7 com 80,5% e 78,3%; 5/6 intermediário)",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no resumo (PubMed) em 11/11/2026: corte 5/6 (≥ 6) confirmado; o GDS-15 é instrumento de rastreio, não de diagnóstico"
+    },
+    {
+      "codigo": "R-FRA-01",
+      "regra": "Edmonton Frail Scale: 0-4 sem fragilidade; 5-6 vulnerável; 7-8 leve; 9-10 moderada; >= 11 grave",
+      "valor": "0-4 / 5-6 / 7-8 / 9-10 / >=11",
+      "fonte": "Classes: Fabrício-Wehbe et al., 2009, Rev Lat Am Enfermagem 17(6):1043-9, doi 10.1590/s0104-11692009000600018, PMID 20126949; texto completo em espanhol lido (revistas.usp.br): 0-4 sem fragilidade; 5-6 aparentemente vulnerável; 7-8 fragilidade leve; 9-10 moderada; 11 ou mais grave. Escala original: Rolfson et al., 2006, Age Ageing 35(5):526-9, doi 10.1093/ageing/afl041, PMID 16757522; texto completo (PMC5955195) lido: traz os itens e o máximo de 17 pontos, mas não traz as faixas de classificação. Desde 12/11/2026 o prompt do aplicativo também usa >= 7",
+      "tipo": "Corte publicado",
+      "verificacao": "Conferido no texto completo em 11/11/2026 (classes em Fabrício-Wehbe 2009)"
+    },
+    {
+      "codigo": "R-FRA-02",
+      "regra": "Katz: 6 independente; 4 dependência moderada; <= 2 dependência grave",
+      "valor": "6 / 4 / <=2",
+      "fonte": "Classificação 6 / 4 / <= 2 em Antonelli et al., 2017, Cinergis 18(3):160-3 (fonte secundária, que cita Duarte; Andrade; Lebrão, 2007, Rev Esc Enferm USP 41(2):317-25, PMID 17722401; texto original não lido). Lino et al., 2008, Cad Saude Publica 24(1):103-12, doi 10.1590/s0102-311x2008000100010, PMID 18209838 é a adaptação transcultural (o resumo não traz classificação). Escores 5 e 3 não são definidos e não são sorteados. A fonte secundária usa 'muito dependente' para <= 2. Duarte et al., 2007, lido no texto completo (SciELO) em 11/11/2026: o indice original nao tem pontuacao nem ponto de corte; as categorias 6 / 4 / <= 2 derivam da versao do Hartford Institute (1998), sem validacao descrita",
+      "tipo": "Convencao de uso (sem corte validado)",
+      "verificacao": "Em 11/11/2026: nao ha corte validado na fonte brasileira; a classificacao e convencao. Tratar como convencao da autora no gerador e no app"
+    },
+    {
+      "codigo": "C-01",
+      "regra": "Zona limítrofe: valores a até 10% do corte (no mínimo 1 unidade em escalas inteiras)",
+      "valor": "10%",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-02",
+      "regra": "Probabilidade esperada: critérios atendidos. Quedas (Berg e TUG): 0 alterados = baixa, 1 = média, 2 = alta. Sarcopenia: sem = baixa, possível = média. Demais hipóteses: presente = alta, ausente = baixa; fragilidade vulnerável = média, leve a grave = alta",
+      "valor": "alta >= 70%; média 40-69%; baixa < 40%",
+      "fonte": "Sem fonte: os consensos não definem probabilidades",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-03",
+      "regra": "Dado ausente ou conflitante: a probabilidade da hipótese afetada fica limitada a média; o sistema deve apontar o que falta ou o conflito",
+      "valor": "teto média",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-04",
+      "regra": "Valor exatamente igual ao corte não é sorteado",
+      "valor": "-",
+      "fonte": "A fonte pode ler o corte como menor que ou menor ou igual",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-05",
+      "regra": "Faixas de plausibilidade dos valores sorteados (por teste, no arquivo de regras)",
+      "valor": "ver campo 'plausivel'",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-06",
+      "regra": "EFS 'normal' sorteado apenas de 0 a 4; EFS 5 não é sorteado; EFS 6 e 8 só aparecem no estrato limítrofe",
+      "valor": "-",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-07",
+      "regra": "MEEM 'normal' e 'alterado claro' só sorteados em escolaridades em que a região existe (normal: analfabeto, 1 a 4 e 5 a 8 anos)",
+      "valor": "-",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-08",
+      "regra": "Alertas esperados: AL-Q1 Berg e TUG alterados; AL-C1 MEEM abaixo do valor da escolaridade; AL-C2 GDS-15 >= 6; AL-F1 EFS >= 7; AL-F2 Katz <= 4. Alerta que depende de valor limítrofe ou ausente é 'opcional'. Os alertas de sarcopenia (AL-S1, AL-S2) não ocorrem sem massa muscular",
+      "valor": "-",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-09",
+      "regra": "Retirada: DXA não está entre os 49 instrumentos",
+      "valor": "-",
+      "fonte": "Sem fonte",
+      "tipo": "Retirada",
+      "verificacao": "Não se aplica"
+    },
+    {
+      "codigo": "C-10",
+      "regra": "Variantes de cada célula em ordem fixa (1 a 4); formato alterna tabela (variantes 1 e 3) e texto livre (variantes 2 e 4)",
+      "valor": "-",
+      "fonte": "Sem fonte",
+      "tipo": "Convenção da autora",
+      "verificacao": "Não se aplica"
+    }
+  ],
+  "revisao_fontes": "2026-11-11: conferência pelo PubMed e por leitura de textos completos acessíveis; Chrome indisponível na sessão | 11/11/2026: restrito aos 49 instrumentos da aba Instrumentos do app (sentar-e-levantar 5x e DXA retirados)",
+  "instrumentos_app_49": {
+    "fonte": "src/routes/_authenticated/instrumentos.tsx do projeto Lovable GerontoDiag Assist (a7fe937b-3428-4f4a-b734-4ede767f7731), lido em 11/11/2026",
+    "com_corte_24": [
+      "EVA",
+      "TUG",
+      "Berg",
+      "MRC",
+      "Katz",
+      "Tinetti (POMA)",
+      "10MWT",
+      "SLS",
+      "FRT",
+      "DGI",
+      "FSST",
+      "Dinamometria",
+      "Barthel",
+      "Fried",
+      "eFS",
+      "K-FRAIL",
+      "Morse",
+      "STRATIFY",
+      "SPPB",
+      "MEEM",
+      "MoCA",
+      "GDS-15",
+      "LSNS-6",
+      "ABC"
+    ],
+    "sem_corte_25": [
+      "6MWT",
+      "F8WT",
+      "Teste L",
+      "SF-12",
+      "WOMAC",
+      "KOOS",
+      "Senior Fitness Test",
+      "CIF",
+      "AGA/CGA",
+      "MDS-UPDRS",
+      "Escore de Charcot-Marie-Tooth",
+      "Escala de Kumamoto",
+      "NIS-LL",
+      "MAS",
+      "Fugl-Meyer",
+      "UPSA-B",
+      "LLFDI",
+      "KCCQ",
+      "NPI",
+      "SIB-S",
+      "IPAQ",
+      "Critérios AWGS",
+      "Teste de equilíbrio estático",
+      "ADL",
+      "Escore de impulsividade"
+    ],
+    "usados_no_gerador": [
+      "Berg",
+      "TUG",
+      "Dinamometria",
+      "10MWT",
+      "SPPB",
+      "MEEM",
+      "GDS-15",
+      "eFS",
+      "Katz"
+    ],
+    "retirados_por_nao_estarem_nos_49": [
+      "Teste de Sentar-e-Levantar 5x (corte > 15 s, Buatois 2010)",
+      "DXA (massa muscular)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "gerado_em": "2026-11-12T03:02:49+00:00",
+  "conjunto": "dev",
+  "semente": 20261111,
+  "n_casos": 16,
+  "regras_arquivo": "regras_v0.1.json",
+  "regras_sha256": "0ae412e0d52a788c219476bbcdba610b24fd61d898e428de8353e06f3cb28c0c",
+  "gerador_sha256": "2b4e7918637297a39dc2a6fa1fec782eabb3c419e45e99dfcb8b341a811cb022",
+  "casos_json_sha256": "50778a006afcab4da438650a8b4d9f17b080dd9c71c7bd940de7e3ed6b12709a"
+}

@@ -1,0 +1,1184 @@
+{
+  "regras_versao": "0.1",
+  "semente": 20261111,
+  "conjunto": "dev",
+  "casos": [
+    {
+      "codigo": "DEV-QED-ALT-01",
+      "conjunto": "dev",
+      "dominio": "QED",
+      "dominio_nome": "Quedas e equilíbrio",
+      "situacao": "ALT",
+      "situacao_nome": "Alterado claro",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 74,
+      "contexto": "ilpi",
+      "queixa": "receio de cair ao andar fora de casa",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "berg": 40,
+        "tug": 28.8
+      },
+      "texto_caso": "Paciente do sexo masculino, 74 anos, institucionalizado em instituição de longa permanência (ILPI). Queixa principal: receio de cair ao andar fora de casa.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Escala de Berg | 40 pontos |\n| TUG | 28,8 segundos |",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Berg",
+          "chave": "berg",
+          "valor": "40",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "TUG",
+          "chave": "tug",
+          "valor": "28,8",
+          "unidade": "segundos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-QED (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_QUEDA",
+            "hipotese": "Risco de quedas",
+            "rotulo_esperado": "alto",
+            "rotulos_aceitos": [
+              "alto"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [
+          "AL-Q1"
+        ],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar risco alto de quedas ou uma causa específica como estabelecidos sem dados que os sustentem; em caso normal, apontar risco aumentado (falso positivo); inventar valor de teste."
+      }
+    },
+    {
+      "codigo": "DEV-QED-LIM-01",
+      "conjunto": "dev",
+      "dominio": "QED",
+      "dominio_nome": "Quedas e equilíbrio",
+      "situacao": "LIM",
+      "situacao_nome": "Limítrofe",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 73,
+      "contexto": "ilpi",
+      "queixa": "insegurança ao caminhar",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "berg": 41,
+        "tug": 28.8
+      },
+      "texto_caso": "Paciente do sexo feminino, 73 anos, institucionalizada em instituição de longa permanência (ILPI). Queixa principal: insegurança ao caminhar. A Escala de Berg resultou em 41 pontos. No TUG, levou 28,8 segundos.",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Berg",
+          "chave": "berg",
+          "valor": "41",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "TUG",
+          "chave": "tug",
+          "valor": "28,8",
+          "unidade": "segundos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-QED (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_QUEDA",
+            "hipotese": "Risco de quedas",
+            "rotulo_esperado": "alto",
+            "rotulos_aceitos": [
+              "alto",
+              "intermediario"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "media",
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": [
+              "berg:limitrofe"
+            ]
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [
+          "AL-Q1"
+        ],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar risco alto de quedas ou uma causa específica como estabelecidos sem dados que os sustentem; em caso normal, apontar risco aumentado (falso positivo); inventar valor de teste."
+      }
+    },
+    {
+      "codigo": "DEV-QED-NOR-01",
+      "conjunto": "dev",
+      "dominio": "QED",
+      "dominio_nome": "Quedas e equilíbrio",
+      "situacao": "NOR",
+      "situacao_nome": "Normal",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 75,
+      "contexto": "pos_alta",
+      "queixa": "avaliação de rotina do equilíbrio e da marcha, sem queixas específicas",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "berg": 55,
+        "tug": 7.2
+      },
+      "texto_caso": "Paciente do sexo masculino, 75 anos, em acompanhamento após alta hospitalar. Queixa principal: avaliação de rotina do equilíbrio e da marcha, sem queixas específicas.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Escala de Berg | 55 pontos |\n| TUG | 7,2 segundos |",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Berg",
+          "chave": "berg",
+          "valor": "55",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "TUG",
+          "chave": "tug",
+          "valor": "7,2",
+          "unidade": "segundos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-QED (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_QUEDA",
+            "hipotese": "Risco de quedas",
+            "rotulo_esperado": "baixo",
+            "rotulos_aceitos": [
+              "baixo"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar risco alto de quedas ou uma causa específica como estabelecidos sem dados que os sustentem; em caso normal, apontar risco aumentado (falso positivo); inventar valor de teste."
+      }
+    },
+    {
+      "codigo": "DEV-QED-INC-01",
+      "conjunto": "dev",
+      "dominio": "QED",
+      "dominio_nome": "Quedas e equilíbrio",
+      "situacao": "INC",
+      "situacao_nome": "Incompleto ou conflitante",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 94,
+      "contexto": "ilpi",
+      "queixa": "receio de cair ao andar fora de casa",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "berg": 36,
+        "tug": null
+      },
+      "texto_caso": "Paciente do sexo masculino, 94 anos, institucionalizado em instituição de longa permanência (ILPI). Queixa principal: receio de cair ao andar fora de casa. A Escala de Berg resultou em 36 pontos.",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Berg",
+          "chave": "berg",
+          "valor": "36",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-QED (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_QUEDA",
+            "hipotese": "Risco de quedas",
+            "rotulo_esperado": "intermediario",
+            "rotulos_aceitos": [
+              "alto",
+              "intermediario"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "media"
+            ],
+            "prob_teto": "media",
+            "incertezas": [
+              "tug:ausente"
+            ]
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [
+          "AL-Q1"
+        ],
+        "dados_faltantes_esperados": [
+          "tug"
+        ],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar risco alto de quedas ou uma causa específica como estabelecidos sem dados que os sustentem; em caso normal, apontar risco aumentado (falso positivo); inventar valor de teste."
+      }
+    },
+    {
+      "codigo": "DEV-SAR-ALT-01",
+      "conjunto": "dev",
+      "dominio": "SAR",
+      "dominio_nome": "Sarcopenia",
+      "situacao": "ALT",
+      "situacao_nome": "Alterado claro",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 88,
+      "contexto": "pos_alta",
+      "queixa": "cansaço ao carregar objetos",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "preensao": 23.5,
+        "marcha": 0.51,
+        "sppb": 6
+      },
+      "texto_caso": "Paciente do sexo masculino, 88 anos, em acompanhamento após alta hospitalar. Queixa principal: cansaço ao carregar objetos.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Força de Preensão Manual (Dinamometria) | 23,5 kg |\n| Teste de Caminhada de 10 Metros (10MWT) | 0,51 m/s |\n| SPPB | 6 pontos |",
+      "valores_a_informar": [
+        {
+          "teste": "Força de Preensão Manual (Dinamometria)",
+          "chave": "preensao",
+          "valor": "23,5",
+          "unidade": "kg"
+        },
+        {
+          "teste": "Teste de Caminhada de 10 Metros (10MWT)",
+          "chave": "marcha",
+          "valor": "0,51",
+          "unidade": "m/s"
+        },
+        {
+          "teste": "SPPB",
+          "chave": "sppb",
+          "valor": "6",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-SAR (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_SARC",
+            "hipotese": "Sarcopenia possível (critérios AWGS 2019, sem massa muscular)",
+            "rotulo_esperado": "sarcopenia_possivel",
+            "rotulos_aceitos": [
+              "sarcopenia_possivel"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "media"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar sarcopenia como confirmada (sem massa muscular medida o máximo é sarcopenia possível); inventar valor de massa muscular ou de outro teste."
+      }
+    },
+    {
+      "codigo": "DEV-SAR-LIM-01",
+      "conjunto": "dev",
+      "dominio": "SAR",
+      "dominio_nome": "Sarcopenia",
+      "situacao": "LIM",
+      "situacao_nome": "Limítrofe",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 93,
+      "contexto": "comunidade",
+      "queixa": "lentidão para caminhar",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "preensao": 25.5,
+        "marcha": 1.44,
+        "sppb": 11
+      },
+      "texto_caso": "Paciente do sexo masculino, 93 anos, residente na comunidade, em atendimento ambulatorial. Queixa principal: lentidão para caminhar. Na dinamometria de preensão manual, registrou 25,5 kg. No Teste de Caminhada de 10 Metros (10MWT), a velocidade de marcha foi de 1,44 m/s. O SPPB totalizou 11 pontos.",
+      "valores_a_informar": [
+        {
+          "teste": "Força de Preensão Manual (Dinamometria)",
+          "chave": "preensao",
+          "valor": "25,5",
+          "unidade": "kg"
+        },
+        {
+          "teste": "Teste de Caminhada de 10 Metros (10MWT)",
+          "chave": "marcha",
+          "valor": "1,44",
+          "unidade": "m/s"
+        },
+        {
+          "teste": "SPPB",
+          "chave": "sppb",
+          "valor": "11",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-SAR (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_SARC",
+            "hipotese": "Sarcopenia possível (critérios AWGS 2019, sem massa muscular)",
+            "rotulo_esperado": "sarcopenia_possivel",
+            "rotulos_aceitos": [
+              "sarcopenia_possivel",
+              "sem_sarcopenia"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "baixa",
+              "media"
+            ],
+            "prob_teto": null,
+            "incertezas": [
+              "preensao:limitrofe"
+            ]
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar sarcopenia como confirmada (sem massa muscular medida o máximo é sarcopenia possível); inventar valor de massa muscular ou de outro teste."
+      }
+    },
+    {
+      "codigo": "DEV-SAR-NOR-01",
+      "conjunto": "dev",
+      "dominio": "SAR",
+      "dominio_nome": "Sarcopenia",
+      "situacao": "NOR",
+      "situacao_nome": "Normal",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 68,
+      "contexto": "ilpi",
+      "queixa": "avaliação de rotina da força e do desempenho físico, sem queixas específicas",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "preensao": 31.0,
+        "marcha": 1.25,
+        "sppb": 11
+      },
+      "texto_caso": "Paciente do sexo feminino, 68 anos, institucionalizada em instituição de longa permanência (ILPI). Queixa principal: avaliação de rotina da força e do desempenho físico, sem queixas específicas.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Força de Preensão Manual (Dinamometria) | 31,0 kg |\n| Teste de Caminhada de 10 Metros (10MWT) | 1,25 m/s |\n| SPPB | 11 pontos |",
+      "valores_a_informar": [
+        {
+          "teste": "Força de Preensão Manual (Dinamometria)",
+          "chave": "preensao",
+          "valor": "31,0",
+          "unidade": "kg"
+        },
+        {
+          "teste": "Teste de Caminhada de 10 Metros (10MWT)",
+          "chave": "marcha",
+          "valor": "1,25",
+          "unidade": "m/s"
+        },
+        {
+          "teste": "SPPB",
+          "chave": "sppb",
+          "valor": "11",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-SAR (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_SARC",
+            "hipotese": "Sarcopenia possível (critérios AWGS 2019, sem massa muscular)",
+            "rotulo_esperado": "sem_sarcopenia",
+            "rotulos_aceitos": [
+              "sem_sarcopenia"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar sarcopenia como confirmada (sem massa muscular medida o máximo é sarcopenia possível); inventar valor de massa muscular ou de outro teste."
+      }
+    },
+    {
+      "codigo": "DEV-SAR-INC-01",
+      "conjunto": "dev",
+      "dominio": "SAR",
+      "dominio_nome": "Sarcopenia",
+      "situacao": "INC",
+      "situacao_nome": "Incompleto ou conflitante",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 89,
+      "contexto": "comunidade",
+      "queixa": "sensação de perda de força nas pernas",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "preensao": null,
+        "marcha": 0.47,
+        "sppb": 5
+      },
+      "texto_caso": "Paciente do sexo feminino, 89 anos, residente na comunidade, em atendimento ambulatorial. Queixa principal: sensação de perda de força nas pernas. No Teste de Caminhada de 10 Metros (10MWT), a velocidade de marcha foi de 0,47 m/s. Pontuou 5 pontos no SPPB.",
+      "valores_a_informar": [
+        {
+          "teste": "Teste de Caminhada de 10 Metros (10MWT)",
+          "chave": "marcha",
+          "valor": "0,47",
+          "unidade": "m/s"
+        },
+        {
+          "teste": "SPPB",
+          "chave": "sppb",
+          "valor": "5",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-SAR (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_SARC",
+            "hipotese": "Sarcopenia possível (critérios AWGS 2019, sem massa muscular)",
+            "rotulo_esperado": "sarcopenia_possivel",
+            "rotulos_aceitos": [
+              "sarcopenia_possivel"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "media"
+            ],
+            "prob_teto": "media",
+            "incertezas": [
+              "preensao:ausente"
+            ]
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [
+          "preensao"
+        ],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar sarcopenia como confirmada (sem massa muscular medida o máximo é sarcopenia possível); inventar valor de massa muscular ou de outro teste."
+      }
+    },
+    {
+      "codigo": "DEV-COG-ALT-01",
+      "conjunto": "dev",
+      "dominio": "COG",
+      "dominio_nome": "Cognição e humor",
+      "situacao": "ALT",
+      "situacao_nome": "Alterado claro",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 95,
+      "contexto": "pos_alta",
+      "queixa": "desânimo nas últimas semanas",
+      "escolaridade": "1_4",
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "meem": 18,
+        "gds": 10
+      },
+      "texto_caso": "Paciente do sexo masculino, 95 anos, em acompanhamento após alta hospitalar. Queixa principal: desânimo nas últimas semanas. Escolaridade: 1 a 4 anos de estudo.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| MEEM (Mini Exame do Estado Mental) | 18 pontos |\n| Escala de Depressão Geriátrica (GDS-15) | 10 pontos |",
+      "valores_a_informar": [
+        {
+          "teste": "MEEM (Mini Exame do Estado Mental)",
+          "chave": "meem",
+          "valor": "18",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Escala de Depressão Geriátrica (GDS-15)",
+          "chave": "gds",
+          "valor": "10",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-COG (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_COG",
+            "hipotese": "Rastreio cognitivo alterado",
+            "rotulo_esperado": "alterado",
+            "rotulos_aceitos": [
+              "alterado"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          },
+          {
+            "id": "H_HUM",
+            "hipotese": "Sintomas depressivos",
+            "rotulo_esperado": "presente",
+            "rotulos_aceitos": [
+              "presente"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [
+          "AL-C1",
+          "AL-C2"
+        ],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar demência, doença de Alzheimer ou depressão como diagnóstico confirmado a partir de rastreio (MEEM, GDS-15); inventar dado; aplicar corte sem a escolaridade quando ela não foi informada."
+      }
+    },
+    {
+      "codigo": "DEV-COG-LIM-01",
+      "conjunto": "dev",
+      "dominio": "COG",
+      "dominio_nome": "Cognição e humor",
+      "situacao": "LIM",
+      "situacao_nome": "Limítrofe",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 89,
+      "contexto": "pos_alta",
+      "queixa": "dificuldade de concentração",
+      "escolaridade": "9_11",
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "meem": 26,
+        "gds": 4
+      },
+      "texto_caso": "Paciente do sexo feminino, 89 anos, em acompanhamento após alta hospitalar. Queixa principal: dificuldade de concentração. Escolaridade: 9 a 11 anos de estudo. O MEEM resultou em 26 pontos. O GDS-15 resultou em 4 pontos.",
+      "valores_a_informar": [
+        {
+          "teste": "MEEM (Mini Exame do Estado Mental)",
+          "chave": "meem",
+          "valor": "26",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Escala de Depressão Geriátrica (GDS-15)",
+          "chave": "gds",
+          "valor": "4",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-COG (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_COG",
+            "hipotese": "Rastreio cognitivo alterado",
+            "rotulo_esperado": "alterado",
+            "rotulos_aceitos": [
+              "alterado",
+              "nao_alterado"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "baixa",
+              "media",
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": [
+              "meem:limitrofe"
+            ]
+          },
+          {
+            "id": "H_HUM",
+            "hipotese": "Sintomas depressivos",
+            "rotulo_esperado": "ausente",
+            "rotulos_aceitos": [
+              "ausente"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [
+          "AL-C1"
+        ],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar demência, doença de Alzheimer ou depressão como diagnóstico confirmado a partir de rastreio (MEEM, GDS-15); inventar dado; aplicar corte sem a escolaridade quando ela não foi informada."
+      }
+    },
+    {
+      "codigo": "DEV-COG-NOR-01",
+      "conjunto": "dev",
+      "dominio": "COG",
+      "dominio_nome": "Cognição e humor",
+      "situacao": "NOR",
+      "situacao_nome": "Normal",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 76,
+      "contexto": "comunidade",
+      "queixa": "avaliação de rotina da memória e do humor, sem queixas específicas",
+      "escolaridade": "5_8",
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "meem": 30,
+        "gds": 1
+      },
+      "texto_caso": "Paciente do sexo feminino, 76 anos, residente na comunidade, em atendimento ambulatorial. Queixa principal: avaliação de rotina da memória e do humor, sem queixas específicas. Escolaridade: 5 a 8 anos de estudo.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| MEEM (Mini Exame do Estado Mental) | 30 pontos |\n| Escala de Depressão Geriátrica (GDS-15) | 1 ponto |",
+      "valores_a_informar": [
+        {
+          "teste": "MEEM (Mini Exame do Estado Mental)",
+          "chave": "meem",
+          "valor": "30",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Escala de Depressão Geriátrica (GDS-15)",
+          "chave": "gds",
+          "valor": "1",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-COG (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_COG",
+            "hipotese": "Rastreio cognitivo alterado",
+            "rotulo_esperado": "nao_alterado",
+            "rotulos_aceitos": [
+              "nao_alterado"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          },
+          {
+            "id": "H_HUM",
+            "hipotese": "Sintomas depressivos",
+            "rotulo_esperado": "ausente",
+            "rotulos_aceitos": [
+              "ausente"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar demência, doença de Alzheimer ou depressão como diagnóstico confirmado a partir de rastreio (MEEM, GDS-15); inventar dado; aplicar corte sem a escolaridade quando ela não foi informada."
+      }
+    },
+    {
+      "codigo": "DEV-COG-INC-01",
+      "conjunto": "dev",
+      "dominio": "COG",
+      "dominio_nome": "Cognição e humor",
+      "situacao": "INC",
+      "situacao_nome": "Incompleto ou conflitante",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 86,
+      "contexto": "ilpi",
+      "queixa": "dificuldade de concentração",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "meem": 21,
+        "gds": 9
+      },
+      "texto_caso": "Paciente do sexo feminino, 86 anos, institucionalizada em instituição de longa permanência (ILPI). Queixa principal: dificuldade de concentração. O MEEM resultou em 21 pontos. Na Escala de Depressão Geriátrica (GDS-15), pontuou 9 pontos.",
+      "valores_a_informar": [
+        {
+          "teste": "MEEM (Mini Exame do Estado Mental)",
+          "chave": "meem",
+          "valor": "21",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Escala de Depressão Geriátrica (GDS-15)",
+          "chave": "gds",
+          "valor": "9",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-COG (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_COG",
+            "hipotese": "Rastreio cognitivo alterado",
+            "rotulo_esperado": "nao_alterado",
+            "rotulos_aceitos": [
+              "alterado",
+              "nao_alterado"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "baixa",
+              "media"
+            ],
+            "prob_teto": "media",
+            "incertezas": [
+              "meem:escolaridade"
+            ]
+          },
+          {
+            "id": "H_HUM",
+            "hipotese": "Sintomas depressivos",
+            "rotulo_esperado": "presente",
+            "rotulos_aceitos": [
+              "presente"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [
+          "AL-C2"
+        ],
+        "alertas_opcionais": [
+          "AL-C1"
+        ],
+        "dados_faltantes_esperados": [
+          "escolaridade"
+        ],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar demência, doença de Alzheimer ou depressão como diagnóstico confirmado a partir de rastreio (MEEM, GDS-15); inventar dado; aplicar corte sem a escolaridade quando ela não foi informada."
+      }
+    },
+    {
+      "codigo": "DEV-FRA-ALT-01",
+      "conjunto": "dev",
+      "dominio": "FRA",
+      "dominio_nome": "Fragilidade e funcionalidade",
+      "situacao": "ALT",
+      "situacao_nome": "Alterado claro",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 82,
+      "contexto": "comunidade",
+      "queixa": "redução das atividades habituais",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "efs": 10,
+        "katz": 4
+      },
+      "texto_caso": "Paciente do sexo masculino, 82 anos, residente na comunidade, em atendimento ambulatorial. Queixa principal: redução das atividades habituais.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Escala de Fragilidade de Edmonton (eFS) | 10 pontos |\n| Índice de Katz | 4 pontos |",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Fragilidade de Edmonton (eFS)",
+          "chave": "efs",
+          "valor": "10",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Índice de Katz",
+          "chave": "katz",
+          "valor": "4",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-FRA (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_FRAG",
+            "hipotese": "Fragilidade (grau)",
+            "rotulo_esperado": "moderada",
+            "rotulos_aceitos": [
+              "moderada"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          },
+          {
+            "id": "H_DEP",
+            "hipotese": "Dependência funcional",
+            "rotulo_esperado": "moderada",
+            "rotulos_aceitos": [
+              "moderada"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [
+          "AL-F1",
+          "AL-F2"
+        ],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar fragilidade ou dependência como confirmadas sem o instrumento correspondente; inventar dado."
+      }
+    },
+    {
+      "codigo": "DEV-FRA-LIM-01",
+      "conjunto": "dev",
+      "dominio": "FRA",
+      "dominio_nome": "Fragilidade e funcionalidade",
+      "situacao": "LIM",
+      "situacao_nome": "Limítrofe",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 75,
+      "contexto": "ilpi",
+      "queixa": "dificuldade para realizar tarefas domésticas",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "efs": 6,
+        "katz": 6
+      },
+      "texto_caso": "Paciente do sexo feminino, 75 anos, institucionalizada em instituição de longa permanência (ILPI). Queixa principal: dificuldade para realizar tarefas domésticas. A Escala de Fragilidade de Edmonton (eFS) totalizou 6 pontos. O Índice de Katz resultou em 6 pontos (escala de 0 a 6).",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Fragilidade de Edmonton (eFS)",
+          "chave": "efs",
+          "valor": "6",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Índice de Katz",
+          "chave": "katz",
+          "valor": "6",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-FRA (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_FRAG",
+            "hipotese": "Fragilidade (grau)",
+            "rotulo_esperado": "vulneravel",
+            "rotulos_aceitos": [
+              "leve",
+              "vulneravel"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "media",
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": [
+              "efs:limitrofe"
+            ]
+          },
+          {
+            "id": "H_DEP",
+            "hipotese": "Dependência funcional",
+            "rotulo_esperado": "independente",
+            "rotulos_aceitos": [
+              "independente"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [
+          "AL-F1"
+        ],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar fragilidade ou dependência como confirmadas sem o instrumento correspondente; inventar dado."
+      }
+    },
+    {
+      "codigo": "DEV-FRA-NOR-01",
+      "conjunto": "dev",
+      "dominio": "FRA",
+      "dominio_nome": "Fragilidade e funcionalidade",
+      "situacao": "NOR",
+      "situacao_nome": "Normal",
+      "variante": 1,
+      "formato": "tabela",
+      "semente": 20261111,
+      "sexo": "M",
+      "idade": 92,
+      "contexto": "comunidade",
+      "queixa": "avaliação funcional de rotina, sem queixas específicas",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "efs": 2,
+        "katz": 6
+      },
+      "texto_caso": "Paciente do sexo masculino, 92 anos, residente na comunidade, em atendimento ambulatorial. Queixa principal: avaliação funcional de rotina, sem queixas específicas.\n\n| Teste/Escala | Valor a informar |\n| :-: | :-: |\n| Escala de Fragilidade de Edmonton (eFS) | 2 pontos |\n| Índice de Katz | 6 pontos |",
+      "valores_a_informar": [
+        {
+          "teste": "Escala de Fragilidade de Edmonton (eFS)",
+          "chave": "efs",
+          "valor": "2",
+          "unidade": "pontos"
+        },
+        {
+          "teste": "Índice de Katz",
+          "chave": "katz",
+          "valor": "6",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-FRA (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_FRAG",
+            "hipotese": "Fragilidade (grau)",
+            "rotulo_esperado": "sem_fragilidade",
+            "rotulos_aceitos": [
+              "sem_fragilidade"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          },
+          {
+            "id": "H_DEP",
+            "hipotese": "Dependência funcional",
+            "rotulo_esperado": "independente",
+            "rotulos_aceitos": [
+              "independente"
+            ],
+            "prob_esperada": "baixa",
+            "prob_aceitas": [
+              "baixa"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [],
+        "alertas_opcionais": [],
+        "dados_faltantes_esperados": [],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar fragilidade ou dependência como confirmadas sem o instrumento correspondente; inventar dado."
+      }
+    },
+    {
+      "codigo": "DEV-FRA-INC-01",
+      "conjunto": "dev",
+      "dominio": "FRA",
+      "dominio_nome": "Fragilidade e funcionalidade",
+      "situacao": "INC",
+      "situacao_nome": "Incompleto ou conflitante",
+      "variante": 1,
+      "formato": "texto_livre",
+      "semente": 20261111,
+      "sexo": "F",
+      "idade": 90,
+      "contexto": "ilpi",
+      "queixa": "cansaço frequente nas atividades diárias",
+      "escolaridade": null,
+      "relatos": [],
+      "conflito_instrumentos": false,
+      "valores": {
+        "efs": null,
+        "katz": 4
+      },
+      "texto_caso": "Paciente do sexo feminino, 90 anos, institucionalizada em instituição de longa permanência (ILPI). Queixa principal: cansaço frequente nas atividades diárias. O Índice de Katz resultou em 4 pontos (escala de 0 a 6).",
+      "valores_a_informar": [
+        {
+          "teste": "Índice de Katz",
+          "chave": "katz",
+          "valor": "4",
+          "unidade": "pontos"
+        }
+      ],
+      "informado_no_texto": [],
+      "regra_aplicada": "R-FRA (regras v0.1)",
+      "gabarito": {
+        "hipoteses": [
+          {
+            "id": "H_FRAG",
+            "hipotese": "Fragilidade (grau)",
+            "rotulo_esperado": "sem_fragilidade",
+            "rotulos_aceitos": [
+              "moderada",
+              "sem_fragilidade",
+              "vulneravel"
+            ],
+            "prob_esperada": "media",
+            "prob_aceitas": [
+              "baixa",
+              "media"
+            ],
+            "prob_teto": "media",
+            "incertezas": [
+              "efs:ausente"
+            ]
+          },
+          {
+            "id": "H_DEP",
+            "hipotese": "Dependência funcional",
+            "rotulo_esperado": "moderada",
+            "rotulos_aceitos": [
+              "moderada"
+            ],
+            "prob_esperada": "alta",
+            "prob_aceitas": [
+              "alta"
+            ],
+            "prob_teto": null,
+            "incertezas": []
+          }
+        ],
+        "alertas_esperados": [
+          "AL-F2"
+        ],
+        "alertas_opcionais": [
+          "AL-F1"
+        ],
+        "dados_faltantes_esperados": [
+          "efs"
+        ],
+        "conflitos_esperados": [],
+        "erro_critico": "Afirmar fragilidade ou dependência como confirmadas sem o instrumento correspondente; inventar dado."
+      }
+    }
+  ]
+}
